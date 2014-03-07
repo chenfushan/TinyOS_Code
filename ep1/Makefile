@@ -1,0 +1,2 @@
+COMPONENT=AlpsApp
+include $(MAKERULES)
