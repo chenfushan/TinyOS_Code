@@ -1,0 +1,2 @@
+COMPONENT=TaskApp
+include $(MAKERULES)
