@@ -1,0 +1,3 @@
+COMPONENT=RssiToSerialC
+
+include $(MAKERULES)
