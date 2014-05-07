@@ -52,7 +52,66 @@ public class SpecAnalyzer implements MessageListener {
 		}
 	}
 
-	
+	/*
+	* print the magnitude of the spectrum to stdoout
+	* @param largest //the largest rssi value taken during the sample period
+	* @param avg //the average rssi value taken during the sample period
+	*/
+
+	void updateSpectrum(int largest, int avg){
+		clearSpectrum();
+		String bar="[";
+		int size = (int) ((float) largest * (float) ((float) MAX_CHARACTERS/(float)(255)));
+
+		for (int i = 0; i < size && i < MAX_CHARACTERS; i++) {
+			bar += "+";
+		}
+
+		for (int i = 0; i < (MAX_CHARACTERS - size); i++) {
+			bar +=" ";
+		}
+
+		bar += "]";
+
+		lastCharsWritten = bar.length();
+		System.out.print(bar);
+	}
+
+	private static void usage(){
+		System.err.println("usage: SpecAnalyzer [-comm <source>]");
+	}
+
+	/*
+	*Main Method
+	* @param args
+	*/
+	public static void main(String[] args) {
+		String source = null;
+		if (args.length == 2) {
+			if (!args[0].equals("-comm")) {
+				usage();
+				System.exit(1);
+			}
+			source = args[1];
+		}else if (args.length != 0) {
+			usage();
+			System.exit(1);
+		}
+
+		PhoenixSource phoenix;
+
+		if (source == null) {
+			phoenix = BuildSource.makePhoenix(PrintStreamMessenger.err);
+		}else{
+			phoenix = BuildSource.makePhoenix(source, PrintStreamMessenger.err);
+		}
+
+		MoteIF mif = new MoteIF(phoenix);
+		new SpecAnalyzer(mif);
+
+
+	}
+
 
 
 
