@@ -15,7 +15,7 @@ public class SpecAnalyzer implements MessageListener {
 	private MoteIF mote;
 	/* Communication with the mote */
 
-	public static final short TOS_BCAST_ADDR = (short) oxffff;
+	public static final short TOS_BCAST_ADDR = (short) 0xffff;
 	// Broadcast Address
 
 	private RssiSerialMsg rssiMsg;
