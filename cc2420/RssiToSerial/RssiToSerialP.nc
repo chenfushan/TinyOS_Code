@@ -123,7 +123,7 @@ implementation{
 				return;
 			}
 			atomic{
-				rsm->rssiAVgValue = (total >> (LOG2SAMPLES));
+				rsm->rssiAvgValue = (total >> (LOG2SAMPLES));
 				rsm->rssiLargestValue = largest;
 				total = 0;
 				largest = 0;

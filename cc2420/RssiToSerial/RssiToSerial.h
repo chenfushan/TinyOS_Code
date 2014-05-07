@@ -2,7 +2,7 @@
 * @author chenfushan
 */
 
-##ifndef RSSI_TO_SERIAL_H
+#ifndef RSSI_TO_SERIAL_H
 #define RSSI_TO_SERIAL_H
 
 typedef nx_struct rssi_serial_msg{
@@ -12,9 +12,9 @@ typedef nx_struct rssi_serial_msg{
 }rssi_serial_msg_t;
 
 enum  { 
-	AM_RSSI_SERIAL_MSG = 134;
-	WAIT_TIME = 256;
-	LOG2SAMPLES = 7;
+	AM_RSSI_SERIAL_MSG = 134,
+	WAIT_TIME = 256,
+	LOG2SAMPLES = 7,
  };
 
 #endif

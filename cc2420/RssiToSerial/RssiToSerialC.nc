@@ -3,7 +3,7 @@
 * write in 2014/05/06
 */
 
-#include "RssiTOSerial.h"
+#include "RssiToSerial.h"
 
 configuration RssiToSerialC {}
 
