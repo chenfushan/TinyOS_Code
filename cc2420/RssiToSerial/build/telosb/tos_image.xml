@@ -1,11 +1,11 @@
 <tos_image>
   <ident>
-    <uidhash>AB0BD915L</uidhash>
+    <uidhash>611C42E2L</uidhash>
     <hostname>xd-Vostro-270s</hostname>
-    <username>xd</username>
+    <username>root</username>
     <appname>RssiToSerialC</appname>
-    <userhash>6E71F8A6L</userhash>
-    <timestamp>5369DB14L</timestamp>
+    <userhash>B1B7C101L</userhash>
+    <timestamp>536B3593L</timestamp>
     <deluge_support>no</deluge_support>
     <platform>telosb</platform>
   </ident>
@@ -565,7 +565,7 @@
 :10628000CA4E01008F10CA4F00001F429412CA4F1D
 :1062900003008F10CA4F020082438E128243901275
 :1062A0008243941282436A114F4DB0126040B01283
-:1062B0004C405B42A312B0126040CA4B04003F4303
+:1062B0004C405B42A312B0126040CA4B04002F4313
 :1062C0007D4005003E40A711CE4F01008F10CE4FFC
 :1062D0000000FE4086FF0600CE4D04000E494F43ED
 :1062E000B012D4664F930220D243041339413A418D

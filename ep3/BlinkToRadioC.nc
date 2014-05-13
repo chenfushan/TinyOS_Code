@@ -9,7 +9,7 @@ module BlinkToRadioC {
 		interface Timer<TMilli> as Timer0;
 		interface Packet;
 		interface AMSend;
-		interface Receive;
+//		interface Receive;
 		interface SplitControl as AMControl;
 		interface CC2420Packet;
 	}
@@ -42,13 +42,13 @@ implementation{
 		if (!busy)
 		{
 			BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)(call Packet.getPayload(&pkt, sizeof(BlinkToRadioMsg)));
+			BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)(call CC2420Packet.setPower(&pkt, SET_POWER));
 			if (btrpkt == NULL)
 			{
 				pr("can not creatbtr");
 				return;
 			}
-			btrpkt->nodeid = TOS_NODE_ID;
-			btrpkt->power = (call CC2420Packet.setPower(&pkt,SET_POWER));
+			btrpkt->node_id = TOS_NODE_ID;
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(BlinkToRadioMsg)) == SUCCESS){
 				pr("call send\n");
 				busy = TRUE;

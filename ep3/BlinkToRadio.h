@@ -3,8 +3,8 @@
 
 enum{
 	AM_BLINKTORADIO=6;
-	TIMER_PERIOD_MILLI = 500;
-	SET_POWER = 15;
+	TIMER_PERIOD_MILLI=500;
+	SET_POWER=15;
 };
 
 typedef nx_struct BlinkToRadioMsg{
