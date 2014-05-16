@@ -7,7 +7,7 @@ module RssiToRadioC{
 	uses interface Leds;
 	uses interface Timer<TMilli> as Timer0;
 	uses interface Packet;
-
+	uses interface AMPacket;
 	uses interface AMSend;
 //	uses interface Receive;
 	uses interface SplitControl as AMControl;
@@ -42,6 +42,7 @@ implementation{
 		{
 			DATA_MSG *dm = (DATA_MSG*)(call Packet.getPayload(&pkt, sizeof(DATA_MSG)));
 			call CC2420Packet.setPower(&pkt, SET_POWER);
+	//		DATA_MSG *dm = (DATA_MSG*)(call CC2420Packet.setPower(&pkt, SET_POWER));
 			dm->nodeid = TOS_NODE_ID;
 			if (call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(DATA_MSG)) == SUCCESS)
 			{
