@@ -10,7 +10,7 @@ implementation {
 	components new TimerMilliC() as Timer0;
 	components ActiveMessageC;
 	components new AMSenderC(AM_DATA_MSG);
-//	components new AMReceiver(AM_DATA_MSG);
+	components new AMReceiver(AM_DATA_MSG);
 	components CC2420ActiveMessageC;
 
 	App.Boot -> MainC;
@@ -21,6 +21,6 @@ implementation {
 
 	App.AMControl -> ActiveMessageC;
 	App.AMSend -> AMSenderC;
-//	App.AMReceive -> AMReceiverC;
+	App.AMReceive -> AMReceiverC;
 	App.CC2420Packet -> CC2420ActiveMessageC;
 }
